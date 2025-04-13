@@ -43,9 +43,6 @@ jobs:
       - name: Run formatter
         run: test -z $(go fmt ./...)
 
-      - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
-
-      - name: Run linter
-        run: staticcheck ./...
+      - name: Staticcheck action
+        uses: dominikh/staticcheck-action@v1
           
